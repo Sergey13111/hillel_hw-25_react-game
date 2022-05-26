@@ -19,7 +19,7 @@ body {
 
 ol,
 ul {
-  padding-left: 30px;
+  padding-left: 10px;
 }
 
 .board-row:after {
@@ -67,6 +67,25 @@ ul {
 .winnerLine {
   background: #116500;
   color: #fff;
+}
+
+.status-info {
+  border: 2px dashed #116500;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #036350d5;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.center {
+  text-align: center;
 }
 
 

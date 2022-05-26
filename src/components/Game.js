@@ -42,12 +42,12 @@ const Game = () => {
   };
 
   const current = history[stepNumber];
-  const winnerInfo = calculateWinner(current.squares);
+  const { winner, winnerLine } = calculateWinner(current.squares);
   const isDraw = history[9]
 
   let status;
-  if (winnerInfo.winner) {
-    status = `Winner: ${winnerInfo.winner}`;
+  if (winner) {
+    status = `Winner: ${winner}`;
   } else if (isDraw) {
     status= `Draw`;
   } else {
@@ -57,11 +57,11 @@ const Game = () => {
   return (
     <div className="game">
       <div className="game-board">
-        <Board squares={current.squares} onClick={handleClick} winnerLine={winnerInfo.winnerLine} />
+        <Board squares={current.squares} onClick={handleClick} winnerLine={winnerLine} />
       </div>
 
       <div className="game-info">
-        <GameInfo status={status} jumpTo={jumpTo} history={history}/>
+        <GameInfo status={status}  jumpTo={jumpTo} history={history}/>
       </div>
     </div>
   );

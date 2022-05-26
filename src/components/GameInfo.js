@@ -1,16 +1,16 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
-const GameInfo = ({ history, jumpTo, status }) => {
+const GameInfo = ({ status, history, jumpTo }) => {
   return (
     <div>
-      <div>{status}</div>
+      <div className="status-info">{status}</div>
       <ol>
         {history.map((step, index) => {
           const isStartStep = index === 0;
 
           return (
             <li key={index}>
-              <button onClick={jumpTo(index)}>
+              <button className="btn" onClick={jumpTo(index)}>
                 {isStartStep ? `Go to game start` : `Go to move #${index}`}
               </button>
             </li>
@@ -18,12 +18,13 @@ const GameInfo = ({ history, jumpTo, status }) => {
         })}
       </ol>
     </div>
-  )
+  );
 };
-// GameInfo.propTypes = {
-// 	// jumpTo: PropTypes.string.isRequired,
-//   status: PropTypes.string.isRequired,
-//   // history: PropTypes.object,
-// }
+
+GameInfo.propTypes = {
+  status: PropTypes.string.isRequired,
+  history: PropTypes.array.isRequired,
+	jumpTo: PropTypes.func.isRequired,
+}
 
 export default GameInfo;
