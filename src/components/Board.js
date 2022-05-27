@@ -5,12 +5,11 @@ import Square from "./Square";
 const Board = ({ squares, onClick, winnerLine}) => {
 	const renderSquare = (index) => {
 		const isWinnerSquare = winnerLine.includes(index);
-		const classSquaer = isWinnerSquare ? `winnerLine square`: "square";
 		return (
 			<Square 
 			value={squares[index]} 
 			onClick={() => onClick(index)} 
-			classSquaer={classSquaer} 
+			isWinnerSquare={isWinnerSquare} 
 			/>
 		);
 	};

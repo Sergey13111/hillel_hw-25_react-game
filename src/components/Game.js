@@ -19,8 +19,8 @@ const Game = () => {
     const current = newHistory[newHistory.length - 1];
     const squares = [...current.squares];
 
-    const isWiner = calculateWinner(current.squares);
-    if (squares[index] || isWiner.winner) {
+    const { winner: isWiner } = calculateWinner(current.squares);
+    if (squares[index] || isWiner) {
       return;
     }
 
